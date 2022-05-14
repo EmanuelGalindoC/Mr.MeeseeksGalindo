@@ -1,7 +1,8 @@
 import java.util.Scanner;
-
+import static java.util.Objects.equals;
 public class Task3 {
-
+int number,hiddernumber;
+int win;
     public static void main (String [] args)
 
     {
@@ -10,7 +11,7 @@ public class Task3 {
 
         scaner.useDelimiter("\\n");
 
-        int count=0; int hiddernumber; while (count<3)
+        int count=0; int hiddernumber; while (count<2)
 
     {
 
@@ -28,33 +29,9 @@ public class Task3 {
 
             System.out.println("Enter a Number");
 
-            int number = scaner.nextInt(); if (number != hiddernumber) {
-
-                if (number < hiddernumber) {
-
-                    System.out.println("***************************************");
-
-                    System.out.println("Enter a Major Number to " + number);
-
-                } else {
-
-                    System.out.println("***************************************");
-
-                    System.out.println("Enter a Less Number to " + number);
-
-                }
-
-            }
-
-            if (number == hiddernumber) {
-
-                System.out.println("***************************************");
-
-                System.out.println("Congratulations! the Number hidden was " + hiddernumber);
-
-                win++;
-
-            }
+            int number = scaner.nextInt();
+            CompareNumber compareNumber = new CompareNumber();
+            compareNumber.CompareNumbers(number,hiddernumber);
 
         }count++;
 
